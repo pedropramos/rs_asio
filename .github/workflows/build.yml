@@ -11,3 +11,10 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
     - name: Build with MSBuild
       run: msbuild  '.\RS_ASIO.sln'
+    - name: Store artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts
+          path: |
+            bin\Win32\Debug\RS_ASIO.dll
+            bin\Win32\Debug\avrt.dll
