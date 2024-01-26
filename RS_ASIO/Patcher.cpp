@@ -161,16 +161,5 @@ void PatchOriginalCode()
 
 	rslog::info_ts() << "image crc32: " << image_crc32_str << std::endl;
 
-	switch (image_crc32)
-	{
-		case 0xd1b38fcb:
-			PatchOriginalCode_d1b38fcb();
-			break;
-		case 0x21a8959a:
-			PatchOriginalCode_21a8959a();
-			break;
-		default:
-			rslog::error_ts() << "Unknown game version" << std::endl;
-			break;
-	}
+	PatchOriginalCode_d1b38fcb();
 }
