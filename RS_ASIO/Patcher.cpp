@@ -152,14 +152,5 @@ void Patch_ReplaceWithNops(void* offset, size_t numBytes)
 
 void PatchOriginalCode()
 {
-	rslog::info_ts() << __FUNCTION__ << std::endl;
-
-	const DWORD image_crc32 = GetImageCrc32();
-
-	char image_crc32_str[16] = { 0 };
-	snprintf(image_crc32_str, 15, "0x%08x", image_crc32);
-
-	rslog::info_ts() << "image crc32: " << image_crc32_str << std::endl;
-
 	PatchOriginalCode_d1b38fcb();
 }
